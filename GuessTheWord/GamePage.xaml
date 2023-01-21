@@ -1,0 +1,33 @@
+﻿<Page x:Class="GuessTheWord.GamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GuessTheWord"
+      mc:Ignorable="d" 
+      d:DesignHeight="540" d:DesignWidth="974"
+      Title="GamePage" Background="Black">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/IconSkin/Back.jpg"/>
+        </Grid.Background>
+        <WrapPanel  Name="wpOne" Margin="160,320,119,0"/>
+        <TextBox x:Name="tbTextQuestion" IsReadOnly="True"  HorizontalAlignment="Left" Margin="80,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="795" Height="85" FontSize="20" VerticalContentAlignment="Center" BorderBrush="{x:Null}">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.5"/>
+            </TextBox.Background>
+        </TextBox>
+        <WrapPanel  Name="wpAnswer" Margin="160,165,119,245" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="btnBackToMenu" Content="На главную" HorizontalAlignment="Left" Margin="840,425,0,0" VerticalAlignment="Top" Click="btnBackToMenu_Click" BorderBrush="{x:Null}" Height="50" Width="115" FontFamily="Microsoft YaHei UI" FontSize="14" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="/IconSkin/Button.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lbHp" Content="1" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="80,425,0,0" VerticalAlignment="Top" Height="50" Width="50" FontSize="24" FontWeight="Bold">
+            <Label.Background>
+                <ImageBrush ImageSource="/IconSkin/hp.png" Stretch="Uniform"/>
+            </Label.Background>
+        </Label>
+    </Grid>
+</Page>
