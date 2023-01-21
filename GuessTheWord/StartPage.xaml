@@ -22,7 +22,7 @@
                 <ImageBrush ImageSource="/IconSkin/Button.png"/>
             </Button.Background>
         </Button>
-        <Label Content="" HorizontalAlignment="Left" Margin="240,55,0,0" VerticalAlignment="Top" Height="175" Width="350">
+        <Label Content=""  Margin="245,55,205,0" VerticalAlignment="Top" Height="175" Width="350">
             <Label.Background>
                 <ImageBrush ImageSource="/IconSkin/logo.png"/>
             </Label.Background>

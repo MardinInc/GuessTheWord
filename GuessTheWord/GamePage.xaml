@@ -13,9 +13,9 @@
             <ImageBrush ImageSource="/IconSkin/Back.jpg"/>
         </Grid.Background>
         <WrapPanel  Name="wpOne" Margin="160,320,119,0"/>
-        <TextBox x:Name="tbTextQuestion" IsReadOnly="True"  HorizontalAlignment="Left" Margin="80,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="795" Height="85" FontSize="20" VerticalContentAlignment="Center" BorderBrush="{x:Null}">
+        <TextBox x:Name="tbTextQuestion" IsReadOnly="True"  HorizontalAlignment="Left" Padding="35" Margin="80,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="795" Height="125" FontSize="20" VerticalContentAlignment="Center" BorderBrush="{x:Null}">
             <TextBox.Background>
-                <SolidColorBrush Color="White" Opacity="0.5"/>
+                <ImageBrush ImageSource="/text.png"/>
             </TextBox.Background>
         </TextBox>
         <WrapPanel  Name="wpAnswer" Margin="160,165,119,245" HorizontalAlignment="Center" VerticalAlignment="Center"/>

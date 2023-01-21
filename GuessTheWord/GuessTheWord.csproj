@@ -222,6 +222,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="text.png" />
     <Resource Include="IconSkin\Back.jpg" />
     <Resource Include="IconSkin\Button.png" />
     <Resource Include="IconSkin\orangebutton.png" />
