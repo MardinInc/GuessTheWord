@@ -222,12 +222,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="orangebutton.png" />
     <Resource Include="text.png" />
     <Resource Include="IconSkin\Back.jpg" />
     <Resource Include="IconSkin\Button.png" />
     <Resource Include="IconSkin\orangebutton.png" />
     <Resource Include="IconSkin\hp.png" />
     <Resource Include="IconSkin\logo.png" />
+    <Resource Include="kubok.png" />
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

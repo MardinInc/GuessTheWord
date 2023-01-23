@@ -22,32 +22,43 @@ namespace GuessTheWord
     public partial class GamePage : Page
     {
         public int activeLetter;
-        public static List<Question> allQuestions;
+        public static List<Question> allQuestions = Mongo.GetCollection();
         public static Random rnd = new Random();
         public static int indexQuestion;
         public static string answer;
         public string[] arrayAnswer;
         public GameInfo newGame = new GameInfo();
+        public Question question;
         public int healPoint = 3;
         public GamePage()
         {
             InitializeComponent();
+            allQuestions = Mongo.GetCollection();
             Start();
         }
         public void Start()
         {
-            wpOne.Children.Clear();
-            wpAnswer.Children.Clear();
-            activeLetter = 0;
-            allQuestions = Mongo.GetCollection();
-            indexQuestion = rnd.Next(0, allQuestions.Count);
-            answer = allQuestions[indexQuestion].answer.ToUpper();
-            arrayAnswer = new string[answer.Length];
-            tbTextQuestion.Text = allQuestions[indexQuestion].textQuestion;
-            string[] letters = new string[40];
-            AddToArrary(answer, letters);
-            letters = RandomizeArray(letters);
-            CreateKeyboard(letters, answer);
+            try
+            {
+                wpOne.Children.Clear();
+                wpAnswer.Children.Clear();
+                activeLetter = 0;
+                indexQuestion = rnd.Next(0, allQuestions.Count);
+                question = allQuestions[indexQuestion];
+                answer = question.answer.ToUpper();
+                arrayAnswer = new string[answer.Length];
+                tbTextQuestion.Text = question.textQuestion;
+                string[] letters = new string[40];
+                AddToArrary(answer, letters);
+                letters = RandomizeArray(letters);
+                CreateKeyboard(letters, answer);
+            }
+            catch
+            {
+                MessageBox.Show("Вопросы закончились!");
+                Mongo.AddToDataBaseGame(newGame);
+                NavigationService.Navigate(new StartPage());
+            }
         }
         public void AddToArrary(string textQuestion, string[] letters)
         {
@@ -64,6 +75,7 @@ namespace GuessTheWord
         private void CreateKeyboard(string[] letters, string answer)
         {
             lbHp.Content = healPoint;
+            lRightAnswer.Content = newGame.rightAnswer;
             for (int i = 0; i < 40; i++)
             {
                 Button btt = new Button();
@@ -171,8 +183,10 @@ namespace GuessTheWord
                 if(checkAnswer == answer)
                 {
                     MessageBox.Show("Правильный ответ!");
-                    newGame.rightAnswer += 1;
+                    lRightAnswer.Content = newGame.rightAnswer;
+                    allQuestions.Remove(question);
                     Start();
+                    newGame.rightAnswer += 1;
                 }
                 else if(healPoint == 0)
                 { 

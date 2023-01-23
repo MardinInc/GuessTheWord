@@ -12,21 +12,26 @@
         <Grid.Background>
             <ImageBrush ImageSource="/IconSkin/Back.jpg"/>
         </Grid.Background>
-        <WrapPanel  Name="wpOne" Margin="160,320,119,0"/>
-        <TextBox x:Name="tbTextQuestion" IsReadOnly="True"  HorizontalAlignment="Left" Padding="35" Margin="80,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="795" Height="125" FontSize="20" VerticalContentAlignment="Center" BorderBrush="{x:Null}">
+        <WrapPanel  Name="wpOne" Margin="160,320,119,0" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="tbTextQuestion" IsReadOnly="True"  HorizontalAlignment="Center" Padding="35"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="795" Height="125" FontSize="20" VerticalContentAlignment="Center" BorderBrush="{x:Null}">
             <TextBox.Background>
                 <ImageBrush ImageSource="/text.png"/>
             </TextBox.Background>
         </TextBox>
         <WrapPanel  Name="wpAnswer" Margin="160,165,119,245" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button x:Name="btnBackToMenu" Content="На главную" HorizontalAlignment="Left" Margin="840,425,0,0" VerticalAlignment="Top" Click="btnBackToMenu_Click" BorderBrush="{x:Null}" Height="50" Width="115" FontFamily="Microsoft YaHei UI" FontSize="14" FontWeight="Bold">
+        <Button x:Name="btnBackToMenu" Content="На главную" HorizontalAlignment="Right" Margin="840,425,0,0" VerticalAlignment="Bottom" Click="btnBackToMenu_Click" BorderBrush="{x:Null}" Height="50" Width="115" FontFamily="Microsoft YaHei UI" FontSize="14" FontWeight="Bold">
             <Button.Background>
                 <ImageBrush ImageSource="/IconSkin/Button.png"/>
             </Button.Background>
         </Button>
-        <Label x:Name="lbHp" Content="1" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="80,425,0,0" VerticalAlignment="Top" Height="50" Width="50" FontSize="24" FontWeight="Bold">
+        <Label x:Name="lbHp" Content="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Width="50" FontSize="24" FontWeight="Bold" Margin="60,0,0,0">
             <Label.Background>
                 <ImageBrush ImageSource="/IconSkin/hp.png" Stretch="Uniform"/>
+            </Label.Background>
+        </Label>
+        <Label x:Name="lRightAnswer" Content="2" HorizontalAlignment="Right" VerticalAlignment="Center" Height="70" Width="70" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Label.Background>
+                <ImageBrush ImageSource="/kubok.png" Stretch="Fill"/>
             </Label.Background>
         </Label>
     </Grid>
